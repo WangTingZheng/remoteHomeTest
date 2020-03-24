@@ -10,7 +10,7 @@
 #### 家庭监控
 当服务端需要获取家庭的实时画面时，它可以通过给特定的硬件发送一条指令来获取图片，实际上是获取此硬件曾经拍摄过的图片的网络地址，服务端可以直接下载来使用。
 ### Api的使用
-在使用之前，您需要把`lib`下的jar放在您项目根目录的`lib`下，当然您也可以在本例程上进行修改，如果您选择引入包，您还需要将以下代码添加到您的pom.xml文件下：
+在使用之前，您需要把`lib`下的jar放在您项目根目录的`lib`下，当然您也可以在本例程上进行修改，如果您选择引入包，您还需要下载[发布页面](https://github.com/WangTingZheng/remoteHomeTest/releases) 的jar包，再将以下代码添加到您的pom.xml文件下：
 ```xml
 <dependency>
     <groupId>org.wangtingzheng.remoteHome</groupId>
