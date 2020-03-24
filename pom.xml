@@ -12,17 +12,17 @@
         <dependency>
             <groupId>org.wangtingzheng.remoteHome</groupId>
             <artifactId>wangtingzheng-remotehome-photo</artifactId>
-            <version>1.0</version>
+            <version>1.0.1</version>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/remoteHomePhoto-1.0.jar</systemPath>
+            <systemPath>${basedir}/lib/remoteHomePhoto-1.0.1.jar</systemPath>
         </dependency>
 
         <dependency>
             <groupId>org.wangtingzheng.remoteHome.Api</groupId>
             <artifactId>wangtingzheng-remotehome-scan</artifactId>
-            <version>1.0</version>
+            <version>1.0.1</version>
             <scope>system</scope>
-            <systemPath>${basedir}/lib/remoteHomeScan-1.0.jar</systemPath>
+            <systemPath>${basedir}/lib/remoteHomeScan-1.0.1.jar</systemPath>
         </dependency>
     </dependencies>
 

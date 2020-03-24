@@ -1,4 +1,5 @@
 ## 硬件端操控指南
+本篇文章主要讲解如何在服务端控制硬件来实现一些功能
 ### 功能描述
 在本节中，我将简要介绍一下硬件所能实现的功能：二维码门禁和家庭监控
 #### 二维码门禁
@@ -9,25 +10,57 @@
 #### 家庭监控
 当服务端需要获取家庭的实时画面时，它可以通过给特定的硬件发送一条指令来获取图片，实际上是获取此硬件曾经拍摄过的图片的网络地址，服务端可以直接下载来使用。
 ### Api的使用
-在使用之前，您需要把`lib`下的jar放在您项目根目录的`lib`下，当然您也可以在本例程上进行修改，如果您选择引入包，您还需要下载[jar文件](https://github.com/WangTingZheng/remoteHomeTest/releases), 并将以下代码添加到您的pom.xml文件下：
+在使用之前，您需要把`lib`下的jar放在您项目根目录的`lib`下，当然您也可以在本例程上进行修改，如果您选择引入包，您还需要将以下代码添加到您的pom.xml文件下：
 ```xml
 <dependency>
     <groupId>org.wangtingzheng.remoteHome</groupId>
-    <artifactId>wangtingzheng-remotehome-photo</artifactId>
-    <version>1.0</version>
+    <artifactId>photo</artifactId>
+    <version>1.0.1</version>
     <scope>system</scope>
-    <systemPath>${basedir}/lib/remoteHomePhoto-1.0.jar</systemPath>
+    <systemPath>${basedir}/lib/remoteHomePhoto-1.0.1.jar</systemPath>
 </dependency>
 
 <dependency>
     <groupId>org.wangtingzheng.remoteHome.Api</groupId>
-    <artifactId>wangtingzheng-remotehome-scan</artifactId>
-    <version>1.0</version>
+    <artifactId>scan</artifactId>
+    <version>1.0.1</version>
     <scope>system</scope>
-    <systemPath>${basedir}/lib/remoteHomeScan-1.0.jar</systemPath>
-        </dependency>
+    <systemPath>${basedir}/lib/remoteHomeScan-1.0.1.jar</systemPath>
+</dependency>
 ```
 这样，您就可以在您的项目中使用它们了
+#### 配置信息填写
+除了直接填写配置信息以外，您还可以通过文件自动导入数据，再次之前，您需要把配置信息导入到一个json文件里，您可以这么写json：
+
+```json
+{
+    "nodes":
+    {
+          "productKey": "",
+          "deviceName" : "",
+          "deviceSecret" : ""
+    },
+    "access":
+    {
+          "accessKey" : "",
+          "accessSecret" : ""
+    },
+    "server":
+    {
+          "productKey" :"",
+          "deviceName" : "",
+          "deviceSecret" : ""
+    }
+}
+```
+
+上面每一组数据的意义由你定义，比如说我这里的nodes保存的是某一个硬件的设备信息，access保存的是阿里云访问信息，server是服务端信息，那当你想初始化一个服务端的时候，你需要提供服务端的设备信息和访问信息，那你可以这样获取服务端设备名称：
+```java
+String filePath = "your json file path";
+Json json = new Json();
+private String deviceName = json.getValue(filePath, "server", "deviceName");
+```
+具体的例子您可以前往`com.wangtingzheng.JsonApp`下的两个Java文件查看
 #### 二维码门禁
 对于服务端，要实现二维码门禁，只需要开启监听服务即可，但是在此之前，还得配置一下服务端的节点的信息，来让服务端连接到阿里云的服务器
 
