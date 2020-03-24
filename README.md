@@ -15,17 +15,17 @@
 <dependency>
     <groupId>org.wangtingzheng.remoteHome</groupId>
     <artifactId>photo</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.1</version>
     <scope>system</scope>
-    <systemPath>${basedir}/lib/remoteHomePhoto-1.0.1.jar</systemPath>
+    <systemPath>${basedir}/lib/remoteHomePhoto-1.1.1.jar</systemPath>
 </dependency>
 
 <dependency>
     <groupId>org.wangtingzheng.remoteHome.Api</groupId>
     <artifactId>scan</artifactId>
-    <version>1.0.1</version>
+    <version>1.1.1</version>
     <scope>system</scope>
-    <systemPath>${basedir}/lib/remoteHomeScan-1.0.1.jar</systemPath>
+    <systemPath>${basedir}/lib/remoteHomeScan-1.1.1.jar</systemPath>
 </dependency>
 ```
 这样，您就可以在您的项目中使用它们了
