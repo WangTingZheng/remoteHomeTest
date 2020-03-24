@@ -8,7 +8,7 @@ public class ServerScanApp {
     // TODO: 2020/3/24: remove values, get from key.json
     public static String filePath = System.getProperty("user.dir") + "/key.json";
     public static Json json = new Json();
-    public static String productKey = json.getValue(filePath, "node", "productKey") ;
+    public static String productKey = json.getValue(filePath, "server", "productKey") ;
     public static String deviceName = json.getValue(filePath, "server", "deviceName");
     public static String deviceSecret = json.getValue(filePath, "server", "deviceSecret");
 
